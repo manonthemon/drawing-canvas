@@ -5,7 +5,9 @@
 
 ## Description
 
-This project was developed to play around with HTML5 "canvas" element which allows for creation of interactive, dynamically updating graphics and animation boars to webpages. Developing this project helped me better understand the following concepts:
+This project was developed to play around with HTML5 "canvas" element which allows for creation of interactive, dynamically updating graphics and animation boars to webpages. It is a simple drawing board with a dynamically updating brush, which changes color and thickness as it draws.
+
+Developing this project helped me better understand the following concepts:
 
 <li>HTML5 "canvas"</li>
 <li>Array destructuring</li>
