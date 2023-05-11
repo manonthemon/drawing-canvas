@@ -1,5 +1,7 @@
 console.log("Hello");
 
+
+//Grabs and defines properties of canvas element
 const canvas = document.querySelector("#draw");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -9,6 +11,7 @@ ctx.lineJoin = "round";
 ctx.lineCap = "round";
 ctx.lineWidth = 100;
 
+
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
@@ -17,7 +20,6 @@ let direction = true;
 
 function draw(e) {
   if (!isDrawing) return; //stops the drawing when mouse is not down
-  console.log(e);
   ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
@@ -25,15 +27,16 @@ function draw(e) {
   ctx.stroke();
   [lastX, lastY] = [e.offsetX, e.offsetY]; //Array destructuring
 
+//Change color of the stroke as it proceeds
   hue++;
   if (hue >= 360) {
     hue = 0;
   }
 
+//Change thickens of drawing brush
   if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
     direction = !direction;
   }
-
   if (direction) {
     ctx.lineWidth++;
   } else {
